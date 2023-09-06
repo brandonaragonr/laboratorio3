@@ -1,0 +1,38 @@
+using System;
+
+namespace ReservacionHotel
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese la categoría del hotel (Tres estrellas o Cinco estrellas): ");
+            string categoria = Console.ReadLine();
+            Console.WriteLine("Ingrese la cantidad de días de estadía: ");
+            int dias = Convert.ToInt32(Console.ReadLine());
+
+            double precio = 0;
+            if (categoria == "Tres estrellas")
+            {
+                if (dias >= 1 && dias <= 5)
+                    precio = 100;
+                else if (dias >= 6 && dias <= 10)
+                    precio = 85;
+                else if (dias >= 11)
+                    precio = 70;
+            }
+            else if (categoria == "Cinco estrellas")
+            {
+                if (dias >= 1 && dias <= 5)
+                    precio = 300;
+                else if (dias >= 6 && dias <= 10)
+                    precio = 270;
+                else if (dias >= 11)
+                    precio = 250;
+            }
+
+            double total = precio * dias + dias * 7;
+            Console.WriteLine("El pago total por el hospedaje es: " + total);
+        }
+    }
+}

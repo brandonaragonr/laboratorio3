@@ -1,0 +1,35 @@
+using System;
+
+namespace PremioCentroComercial
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese la edad del ganador: ");
+            int edad = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese la cantidad de adivinanzas acertadas: ");
+            int adivinanzas = Convert.ToInt32(Console.ReadLine());
+
+            double montoInicial = 0;
+            if (edad >= 18)
+            {
+                if (adivinanzas < 3)
+                    montoInicial = 30;
+                else
+                    montoInicial = 50;
+            }
+            else
+            {
+                if (adivinanzas < 3)
+                    montoInicial = 50;
+                else
+                    montoInicial = 80;
+            }
+
+            double montoExtra = edad * 5 + adivinanzas * 2;
+            double total = montoInicial + montoExtra;
+            Console.WriteLine("El monto final que el ganador recibe como premio es: " + total);
+        }
+    }
+}

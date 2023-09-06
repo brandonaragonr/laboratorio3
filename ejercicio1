@@ -1,0 +1,38 @@
+using System;
+
+namespace TransporteFrutas
+    class Program
+        static void Main(string[] args)
+        
+            Console.WriteLine("Ingrese el tipo de fruta (Naranja, Fresa o Mango): ");
+            string fruta = Console.ReadLine();
+            Console.WriteLine("Ingrese la distancia en km: ");
+            int distancia = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el número de cajas: ");
+            int cajas = Convert.ToInt32(Console.ReadLine());
+
+            double precio = 0;
+            if (fruta == "Naranja")
+            {
+                if (distancia < 30)
+                    precio = 2.00;
+                else
+                    precio = 4.00;
+            }
+            else if (fruta == "Fresa")
+            {
+                if (distancia < 30)
+                    precio = 6.00;
+                else
+                    precio = 4.00;
+            }
+            else if (fruta == "Mango")
+            {
+                if (distancia < 30)
+                    precio = 3.00;
+                else
+                    precio = 5.00;
+            }
+
+            double total = precio * cajas;
+            Console.WriteLine("El pago total por la carga es: " + total);
